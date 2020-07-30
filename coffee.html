@@ -53,19 +53,32 @@
 <script>
     "use strict";
 
-    // var myImage = document.getElementById("coffee_image");
-
+    // done var myImage = document.getElementById("coffee_image");
     let myImage = $("#coffee_image");
 
 
     // var myRevenueMessage = document.getElementById("revenue");
+    let myRevenueMessage = $('#revenue')
 
-    // myImage.setAttribute("src", "static/coffee_beans.jpg");
-
-
+    // done myImage.setAttribute("src", "static/coffee_beans.jpg");
     myImage = $('img').attr("src", "static/coffee_beans.jpg")
 
-    // myImage.addEventListener("click", makeCoffee);
+    // done myImage.addEventListener("click", makeCoffee);
+    myImage.on('click', makeCoffee);
+
+    function makeCoffee() {
+        myImage = $('img').attr("src", "static/coffee_machine.jpg") 
+        // myImage.src = "static/coffee_machine.jpg";  <--- changed this line
+
+        setTimeout(function() {
+            myImage = $('img').attr("src", "static/coffee_mug.jpg")
+          }, 1500);
+          
+        setTimeout(function() {
+            myImage = $('img').attr("src", "static/coffee_beans.jpg")
+         }, 4000);  
+
+    }
 
     // function makeCoffee() {
     //      myImage.src = "static/coffee_machine.jpg";
