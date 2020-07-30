@@ -55,25 +55,29 @@
 
     // var myImage = document.getElementById("coffee_image");
 
-    const myImage = $('#coffee_image');
+    let myImage = $("#coffee_image");
 
-    var myRevenueMessage = document.getElementById("revenue");
 
-    myImage.setAttribute("src", "static/coffee_beans.jpg");
+    // var myRevenueMessage = document.getElementById("revenue");
 
-    myImage.addEventListener("click", makeCoffee);
+    // myImage.setAttribute("src", "static/coffee_beans.jpg");
 
-    function makeCoffee() {
-         myImage.src = "static/coffee_machine.jpg";
 
-         setTimeout(function() {
-             myImage.setAttribute("src", "static/coffee_mug.jpg");
-         }, 1500);
+    myImage = $('img').attr("src", "static/coffee_beans.jpg")
 
-         setTimeout(function() {
-             myImage.setAttribute("src", "static/coffee_beans.jpg");
-         }, 4000);
-    }
+    // myImage.addEventListener("click", makeCoffee);
+
+    // function makeCoffee() {
+    //      myImage.src = "static/coffee_machine.jpg";
+
+    //      setTimeout(function() {
+    //          myImage.setAttribute("src", "static/coffee_mug.jpg");
+    //      }, 1500);
+
+    //      setTimeout(function() {
+    //          myImage.setAttribute("src", "static/coffee_beans.jpg");
+    //      }, 4000);
+    // }
 
 </script>
 
