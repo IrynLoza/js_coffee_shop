@@ -9,6 +9,12 @@
           href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
     <link href="static/coffee.css" rel="stylesheet">
     <link href="http://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
+
+    <script
+        src="https://code.jquery.com/jquery-3.4.0.js"
+        integrity="sha256-DYZMCC8HTC+QDr5QNaIcfR7VSPtcISykd+6eSmBW5qo="
+        crossorigin="anonymous">
+    </script>
 </head>
 <body>
 <div class="container">
@@ -46,13 +52,19 @@
 <script>
     "use strict";
 
-    var myImage = document.getElementById("coffee_image");
-    var myRevenueMessage = document.getElementById("revenue");
+    // var myImage = document.getElementById("coffee_image");
+    let myImage = $('#coffee_image')
 
-    var drinksOrdered = [];
+    // var myRevenueMessage = document.getElementById("revenue"); 
+    let myRevenueMessage = $('#revenue');
 
-    myImage.src = "static/coffee_beans.jpg";
-    myImage.addEventListener('click', function () { makeCoffee("brew"); });
+    let drinksOrdered = [];
+
+    // myImage.src = "static/coffee_beans.jpg";
+    myImage = $('img').attr("src", "static/coffee_beans.jpg")
+
+    // myImage.addEventListener('click', function () { makeCoffee("brew"); });
+    myImage.on('click', function () { makeCoffee("brew"); });
 
     // Append the drink_type to drinks_ordered and use console.log to view
     // the output.
