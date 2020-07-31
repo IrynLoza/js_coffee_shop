@@ -45,7 +45,7 @@
             </tr>
         </table>
 
-        <h4>Total: <span id="revenue"><!-- Revenue Message will show up here --></span></h4>
+        <h4>Total: <span id="revenue"></span></h4>
     </div>
 </div>
 
@@ -71,7 +71,11 @@
 
     function makeCoffee(drinkType) {
         drinksOrdered.push(drinkType);
+        // $('#revenue').append({drinksOrdered});
         console.log(drinksOrdered);
+
+        // $('h4').append('<span>{total}</span>');
+        // $('h4').append('<span>{myRevenue}</span>');
 
         var myRevenue = revenue();
         myRevenueMessage.innerHTML = "Today's revenues: " + myRevenue;
@@ -94,23 +98,42 @@
         
     }
 
+    
+
 
     // Create variables for Espresso, Latte, and Hot Chocolate;
     // and add an event listener to each that calls makeCoffee.
 
-    var espresso = document.getElementById("espresso");
-    var latte = document.getElementById("latte");
-    var hotChocolate = document.getElementById("hot-chocolate");
+    // var espresso = document.getElementById("espresso");
+    let espresso = $('#espresso')
 
-    espresso.addEventListener('click', function () {
+    // var latte = document.getElementById("latte");
+    let latte = $('#latte')
+
+    // var hotChocolate = document.getElementById("hot-chocolate");
+    let hotChocolate = $('#hot-chocolate')
+    
+    // espresso.addEventListener('click', function () {
+    //     makeCoffee("espresso");
+    // });
+
+    espresso.on('click', function () {
         makeCoffee("espresso");
     });
 
-    latte.addEventListener('click', function () {
+    // latte.addEventListener('click', function () {
+    //     makeCoffee("latte");
+    // });
+
+    latte.on('click', function() {
         makeCoffee("latte");
     });
 
-    hotChocolate.addEventListener('click', function () {
+    // hotChocolate.addEventListener('click', function () {
+    //     makeCoffee("hot chocolate");
+    // });
+    
+    hotChocolate.on('click', function () {
         makeCoffee("hot chocolate");
     });
 
@@ -132,6 +155,7 @@
         }
 
         console.log("Total revenue = " + total);
+        $('#revenue').html(total);
 
         return total;
     }
