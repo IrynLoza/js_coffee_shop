@@ -76,15 +76,22 @@
         var myRevenue = revenue();
         myRevenueMessage.innerHTML = "Today's revenues: " + myRevenue;
 
-        myImage.setAttribute('src', "static/coffee_machine.jpg");
+        // myImage.setAttribute('src', "static/coffee_machine.jpg");
+        myImage = $('img').attr("src", "static/coffee_machine.jpg");
 
         setTimeout(function () {
-            myImage.setAttribute('src', "static/coffee_mug.jpg");
+        //     myImage.setAttribute('src', "static/coffee_mug.jpg");
+        // }, 1500);
+        myImage = $('img').attr("src", "static/coffee_mug.jpg");
         }, 1500);
 
         setTimeout(function () {
-            myImage.setAttribute('src', "static/coffee_beans.jpg");
+        //     myImage.setAttribute('src', "static/coffee_beans.jpg");
+        // }, 4000);
+
+        myImage = $('img').attr("src", "static/coffee_beans.jpg");
         }, 4000);
+        
     }
 
 
